@@ -89,6 +89,23 @@ let indexOf = text4.indexOf("locate");
 let lastIndexOf = text4.lastIndexOf("locate");
 
 
+/* 
+match ()
+    The match() method searches a string for a match againt a regular expression, and return the matches, as an Array object
+    if the regular expression does not include the "g" modifier, the match() method will return only the first match in the string
+*/
+let text5 = "The rain in SPAIN stays mainly in the plain"
+let findMatchGlobal = text5.match(/ain/g);
+
+/*
+includes()
+    The includes() method returns true if a string contains a specified value
+*/
+let text6 = "Hello World, welcome to the universe."
+const includeString = text6.includes("world")
+
+
+
 
 module.exports = {
     slice,
@@ -99,5 +116,7 @@ module.exports = {
     concatText,
     trimString,
     indexOf,
-    lastIndexOf
+    lastIndexOf,
+    findMatchGlobal,
+    includeString
 }
