@@ -1,0 +1,19 @@
+{
+  "name": "nodejs_javascript",
+  "version": "1.0.0",
+  "description": "This project is written for learning of node's javascript syntax an so on ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Majeed Dourandeesh",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "jest": "^27.4.5",
+    "mocha": "^9.1.3"
+  }
+}
