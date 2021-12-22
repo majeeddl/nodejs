@@ -110,7 +110,7 @@ let someResult = numberForReduce.some(everyFunc)
 /*
 The Array indexOf() Method
 The Array lastIndexOf() Method
-/*
+*/
 
 module.exports = {
     fruits,
