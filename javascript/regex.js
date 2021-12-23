@@ -38,10 +38,55 @@ let regexThree = text.match(/(red|green)/g)
 
 /*
 Metacharacters are characters with a special meaning:
+*/
+
+// \d	Find a digit
+text =  "Give 100%!";
+let regexFour = text.match(/\d/g)
+
+// \s	Find a whitespace character
+text = "Is this all there is?";
+let regexFive = text.match(/\s/g);
+
+//\b	Find a match at the beginning of a word like this: \bWORD, or at the end of a word like this: WORD\b
+text = "HELLO, LOOK AT YOU!";
+let regexSix = text.search(/\bLO/)
+
+
 /*
+Quantifiers define quantities:
+
+Quantifier	Description	Try it
+n+	Matches any string that contains at least one n
+n*	Matches any string that contains zero or more occurrences of n
+n?	Matches any string that contains zero or one occurrences of n
+*/
+
+
+/*
+Using test()
+*/
+
+//
+//const pattern = /e/;
+//pattern.test("The best things in life are free!"); // true
+
+/*
+Using exec()
+    The exec() method is a RegExp expression method.
+    It searches a string for a specified pattern, and returns the found text as an object.
+    If no match is found, it returns an empty (null) object.
+    The following example searches a string for the character "e":
+*/
+
+let resultExec = /e/.exec("The best things in life are free!");
 
 module.exports = {
     regexOne,
     regexTwo,
-    regexThree
+    regexThree,
+    regexFour,
+    regexFive,
+    regexSix,
+    resultExec
 }
