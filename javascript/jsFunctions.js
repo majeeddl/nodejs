@@ -60,6 +60,67 @@ function add(){
   return counter
 }
 
+
+
+//JavaScript Function Apply
+//APPLY
+
+const person = {
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+}
+
+const person1 = {
+  firstName: "Mary",
+  lastName: "Doe"
+}
+
+// This will return "Mary Doe":
+person.fullName.apply(person1);
+
+/*
+
+The Difference Between call() and apply()
+
+The difference is:
+
+  ** The call() method takes arguments separately.
+  ** The apply() method takes arguments as an array.
+  ** The apply() method is very handy if you want to use an array instead of an argument list.
+
+*/
+
+/*
+
+const person = {
+  fullName: function(city, country) {
+    return this.firstName + " " + this.lastName + "," + city + "," + country;
+  }
+}
+
+const person1 = {
+  firstName:"John",
+  lastName: "Doe"
+}
+
+person.fullName.call(person1, "Oslo", "Norway");
+*/
+
+const person2 = {
+  fullName: function(city, country) {
+    return this.firstName + " " + this.lastName + "," + city + "," + country;
+  }
+}
+
+const person3 = {
+  firstName:"John",
+  lastName: "Doe"
+}
+
+person2.fullName.apply(person3, ["Oslo", "Norway"]);
+
+
 //JavaScript Closures
 //Remember self-invoking functions? What does this function do?
 const add = (()=>{
@@ -82,3 +143,11 @@ Example Explained
   A closure is a function having access to the parent scope, even after the parent function has closed.
 
 */
+
+// const add = (()=>{
+//     let counter = 0;
+//     return ()=>{
+//       counter +=1;
+//       return counter
+//     }
+// })()

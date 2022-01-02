@@ -67,8 +67,14 @@ class Car {
     set cname(x){
         this._cname = x
     }
+
+    static hello(){
+        return "Hello!"
+    }
 }
 
 let myCar = new Car("Ford")
 
 console.log(myCar.cname)
+
+//

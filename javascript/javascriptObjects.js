@@ -244,3 +244,31 @@ n.next(); // Returns 10
 n.next(); // Returns 20
 n.next(); // Returns 30
 
+
+//A JavaScript iterable is an object that has a Symbol.iterator.
+//The Symbol.iterator is a function that returns a next() function.
+
+myNumbers = {
+
+}
+
+myNumbers[Symbol.iterator] = ()=>{
+  let n=0;
+  done = false;
+  return {
+    next(){
+      n+=10;
+      if(n==0){
+        done =true
+      }
+      return {
+        value : n,
+        done : done
+      }
+    }
+  }
+}
+
+for (const num of myNumbers) {
+  // Any Code Here
+}
