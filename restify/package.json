@@ -1,0 +1,10 @@
+{
+  "name": "restify",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "majeed dourandeesh",
+  "license": "MIT",
+  "dependencies": {
+    "restify": "^8.6.0"
+  }
+}
