@@ -40,12 +40,12 @@ model: "optima",
 year: "2012"
 }];
 
-let group = cars.reduce((r,a)=>{
-    console.log(a)
-    console.log(r)
-    console.log([...r[a.make] || [],a])
-    r[a.make] = [...r[a.make] || [],a]
-    return r
+let group = cars.reduce((a,b)=>{
+    // console.log(a)
+    // console.log(b)
+    // console.log([...a[b.make] || [],a])
+    a[b.make] = [...a[b.make] || [],b]
+    return a
 },{})
 
 const groupByResult = group
