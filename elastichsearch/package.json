@@ -4,7 +4,11 @@
   "description": "This project is written for working with elasticsearch database.",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "node helloworld.js"
+  },
   "dependencies": {
+    "@elastic/elasticsearch": "^7.16.0",
     "elasticsearch": "^16.7.2",
     "express": "^4.17.2",
     "jest": "^27.4.7"
