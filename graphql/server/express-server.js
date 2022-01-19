@@ -7,7 +7,7 @@ var {
   GraphQLSchema,
 } = require("graphql");
 
-import { books, authors } from "./data.js";
+import { books, authors } from "./data";
 // const schema = buildSchema(`
 //     type Query {
 //         hello : String
