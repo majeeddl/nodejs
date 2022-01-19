@@ -4,14 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node apollo-server.js",
+    "express": "nodemon express-server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "type": "module",
   "author": "",
   "license": "ISC",
   "dependencies": {
     "apollo-server": "^3.6.1",
     "express": "^4.17.2",
     "express-graphql": "^0.12.0",
-    "graphql": "^16.2.0"
+    "graphql": "^16.2.0",
+    "nodemon": "^2.0.15"
   }
 }
