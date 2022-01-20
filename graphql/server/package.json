@@ -8,7 +8,6 @@
     "express": "nodemon express-server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "type": "module",
   "author": "",
   "license": "ISC",
   "dependencies": {
