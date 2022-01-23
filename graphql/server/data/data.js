@@ -36,7 +36,11 @@ const books = [
   },
 ];
 
-module.exports = {
-  books: books,
-  authors: authors,
-};
+// module.exports = {
+//   books: books,
+//   authors: authors,
+// };
+
+module.exports.books = books;
+
+module.exports.author = authors
