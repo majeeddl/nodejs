@@ -17,22 +17,22 @@ const books = [
   {
     id: 1,
     name: " book 1",
-    auhtorId: 1,
+    authorId: 1,
   },
   {
     id: 2,
     name: " book 2",
-    auhtorId: 2,
+    authorId: 2,
   },
   {
     id: 3,
     name: " book 3",
-    auhtorId: 2,
+    authorId: 2,
   },
   {
     id: 4,
     name: " book 4",
-    auhtorId: 3,
+    authorId: 3,
   },
 ];
 
@@ -43,4 +43,4 @@ const books = [
 
 module.exports.books = books;
 
-module.exports.author = authors
+module.exports.authors = authors;
