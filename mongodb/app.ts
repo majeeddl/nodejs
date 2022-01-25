@@ -43,16 +43,16 @@ app.get("/", async (req, res) => {
           symbol: "$symbol",
           time: {
             $dateTrunc: {
-              date: "$time",
+              date: "$timestamp",
               unit: "minute",
-              binSize: 5,
+              binSize: 120,
             },
           },
         },
-        high: { $max: "$price" },
-        low: { $min: "$price" },
-        open: { $first: "$price" },
-        close: { $last: "$price" },
+        high: { $max: "$high" },
+        low: { $min: "$low" },
+        open: { $first: "$open" },
+        close: { $last: "$close" },
       },
     },
     {
@@ -71,16 +71,19 @@ app.get("/", async (req, res) => {
     },
   ];
 
-  const result = db
+  const result = await db
     .db("nodejs_mongodb")
     .collection("stock")
-    .aggregate(aggregate);
+    .aggregate(aggregate)
+    .toArray();
 
-  for await (const doc of result) {
-    console.log(doc);
-  }
+  // for await (const doc of result) {
+  //   console.log(doc);
+  // }
 
-  //   console.log(result);
+  console.log(result.length);
+  console.log(result[0]);
+  console.log(result[1]);
 
   await client.close();
   res.send("Mongo db express project");
