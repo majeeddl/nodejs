@@ -38,3 +38,15 @@ myGenericNumber.zeroValueL = 0
 myGenericNumber.add = (a,b)=>{
     return a+b
 }
+
+
+
+//Conditional Types
+
+type MessageOf<T extends { message: unknown }> = T["message"];
+
+interface Email {
+  message: string;
+}
+
+type EmailMessageContents = MessageOf<Email>;
