@@ -1,6 +1,7 @@
 import { Controller, Get, Param, Post, Req, Query } from '@nestjs/common';
 import { HelloService } from 'src/services/hello.service';
 import { Request } from 'express';
+import { CustomPipe } from 'src/pipes/custom.pipe';
 
 @Controller('hello')
 export class HelloController {
@@ -10,6 +11,11 @@ export class HelloController {
   findAll(@Query() query): string[] {
     console.log(query);
     return this.helloService.findAll();
+  }
+
+  @Get(':id')
+  findOne(@Param('id', new CustomPipe()) id) {
+    return id;
   }
 
   @Post()
