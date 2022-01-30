@@ -135,3 +135,46 @@ while (condition);
 
 
 */
+
+while (i < 10) {
+  text += "The number is " + i;
+  i++;
+}
+
+do {
+  text += "The number is " + i;
+  i++;
+} while (i < 10);
+
+
+const numbers = [45, 4, 9, 16, 25];
+
+let txt = "";
+numbers.forEach(myFunction);
+
+function myFunction(value, index, array) {
+  txt += value;
+}
+
+
+const cars = ["BMW", "Volvo", "Mini"];
+
+let text = "";
+for (let x of cars) {
+  text += x;
+}
+
+// BMW;
+// Volvo;
+// Mini;
+
+
+//If you have read the previous chapter, about the for loop, you will discover that a while loop is much the same as a for loop, with statement 1 and statement 3 omitted.
+const cars = ["BMW", "Volvo", "Saab", "Ford"];
+let i = 0;
+let text = "";
+
+for (; cars[i]; ) {
+  text += cars[i];
+  i++;
+}
