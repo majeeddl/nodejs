@@ -8,7 +8,7 @@ interface Json {
 class PersonThree implements Json {
   constructor(private firstName: string, private lastName: string) {}
   
-  toJson(): string {
+  toJSON(): string {
     return JSON.stringify(this);
   }
 }
