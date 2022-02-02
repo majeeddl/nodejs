@@ -123,8 +123,8 @@ class FullTimeEmployee extends EmployeeAbstract {
     return this.salary;
   }
 }
-
 /*
+
 
 Summary
 Abstract classes cannot be instantiated.
@@ -132,3 +132,63 @@ An Abstract class has at least one abstract method.
 To use an abstract class, you need to inherit it and provide the implementation for the abstract methods.
 
 */
+
+
+/*
+Super Calls
+Just as in JavaScript, if you have a base class, you’ll need to call super(); in your constructor body before using any this.
+
+
+*/
+class Base {
+  k = 4;
+}
+ 
+class Derived extends Base {
+  constructor() {
+    super();
+    console.log(this.k);
+  }
+}
+
+
+/*
+Overriding Methods
+*/
+class Base2 {
+  greet() {
+    console.log("Hello, world!");
+  }
+}
+
+class Derived2 extends Base2{
+  greet(name?:string): void {
+      if(!name){
+        super.greet()
+      }else{
+        console.log(`Hello , ${name.toUpperCase()}`)
+      }
+  }
+}
+
+const d = new Derived2();
+d.greet();
+d.greet("reader");
+ 
+/*
+Member Visibility
+
+*/
+
+//public
+
+
+// protected
+// protected members are only visible to subclasses of the class they’re declared in.
+
+// private
+// private is like protected, but doesn’t allow access to the member even from subclasses:
+
+
+
+
