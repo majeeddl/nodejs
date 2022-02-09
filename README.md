@@ -6,6 +6,9 @@ includes :
 
 - javascript
 - typesctipt
+- graphql
+- nestjs
+- TDD ( Test Deriven Development)
 
 Thanks for : w3schools
 
