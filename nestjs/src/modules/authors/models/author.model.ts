@@ -1,5 +1,5 @@
 import { Field, Int, ObjectType } from '@nestjs/graphql';
-import { Post } from 'src/posts/models/post.model';
+import { Post } from 'src/modules/posts/models/post.model';
 
 /*
 

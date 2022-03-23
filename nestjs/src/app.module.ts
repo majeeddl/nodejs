@@ -1,19 +1,23 @@
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
+import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { LoggerMiddleware } from 'src/middlewares/logger.middleware';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { AuthorModule } from './authors/author.module';
-import { HelloModule } from './hello/hello.module';
+import { AuthorModule } from './modules/authors/author.module';
+import { HelloModule } from './modules/hello/hello.module';
 
 @Module({
   imports: [
     AuthorModule,
-    GraphQLModule.forRoot({
-      playground: true,
-      installSubscriptionHandlers: true,
-      autoSchemaFile: 'schema.gql',
-    }),
+    // GraphQLModule.forRoot<ApolloDriverConfig>({
+    //   driver: ApolloDriver,
+    // }),
+    // GraphQLModule.forRoot({
+    //   playground: true,
+    //   installSubscriptionHandlers: true,
+    //   autoSchemaFile: 'schema.gql',
+    // }),
     HelloModule,
   ],
   controllers: [AppController],

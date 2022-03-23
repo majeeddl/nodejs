@@ -1,5 +1,5 @@
 import { Controller, Get, Param, Post, Req, Query } from '@nestjs/common';
-import { HelloService } from 'src/hello/hello.service';
+import { HelloService } from 'src/modules/hello/hello.service';
 import { Request } from 'express';
 import { CustomPipe } from 'src/pipes/custom.pipe';
 
