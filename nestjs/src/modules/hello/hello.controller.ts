@@ -1,8 +1,11 @@
-import { Controller, Get, Param, Post, Req, Query } from '@nestjs/common';
+import { Controller, Get, Param, Post, Req, Query, UseInterceptors } from '@nestjs/common';
 import { HelloService } from 'src/modules/hello/hello.service';
 import { Request } from 'express';
-import { CustomPipe } from 'src/pipes/custom.pipe';
+import { CustomPipe } from 'src/modules/pipes/custom.pipe';
+import { LoggerInceptor } from 'src/interceptors/logger.interceptor';
 
+
+@UseInterceptors(LoggerInceptor)
 @Controller('hello')
 export class HelloController {
   constructor(private helloService: HelloService) {}
