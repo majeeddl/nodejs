@@ -6,6 +6,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthorModule } from './modules/authors/author.module';
 import { HelloModule } from './modules/hello/hello.module';
+import { PipeModule } from './pipes/pipe.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { HelloModule } from './modules/hello/hello.module';
     //   autoSchemaFile: 'schema.gql',
     // }),
     HelloModule,
+    PipeModule
   ],
   controllers: [AppController],
   providers: [AppService],
