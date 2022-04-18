@@ -1,0 +1,21 @@
+{
+  "name": "message-brokers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Majeed Dourandeesh",
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.8.0",
+    "kafkajs": "^1.16.0"
+  },
+  "devDependencies": {
+    "@types/amqplib": "^0.8.2",
+    "@types/kafkajs": "^1.9.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.6.3"
+  }
+}
