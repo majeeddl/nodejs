@@ -19,4 +19,8 @@ describe('CatsController', () => {
   it('findAll', () => {
     expect(controller.findAll()).toBe('This action returns all cats');
   });
+
+  it('findOne', async () => {
+    expect(await controller.findOne('cat-1')).toBe('Cat id is : cat-1');
+  });
 });
