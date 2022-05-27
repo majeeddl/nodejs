@@ -1,7 +1,7 @@
 
 
 // Single responsibility principle
-import logMessage from "./solid-design/logger"
+import logMessage from "./utils/logger"
 
 /*
 This class has one reason to change: it is responsible for logging calorie surplus.

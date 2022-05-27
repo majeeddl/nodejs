@@ -1,4 +1,4 @@
-import CalorieTracker from "./SolidResponse-SOLID.js";
+import CalorieTracker from "./solidResponse.js";
 
 
 describe('Test Solid Response', () => {
