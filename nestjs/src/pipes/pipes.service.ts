@@ -13,7 +13,7 @@ export class PipesService {
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} pipe`;
+    return id + 1;
   }
 
   update(id: number, updatePipeDto: UpdatePipeDto) {

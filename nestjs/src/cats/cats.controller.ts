@@ -1,7 +1,7 @@
 import { Controller, Get, Req, Param, Post, Body, Put, HttpException, HttpStatus, UseFilters } from '@nestjs/common';
 import { Request } from 'express';
-import { ForbiddenException } from 'src/exceptions/forbidden.exception';
-import { HttpExceptionFilter } from 'src/exceptions/http-exception.filter';
+import { ForbiddenException } from '../exceptions/forbidden.exception';
+import { HttpExceptionFilter } from '../exceptions/http-exception.filter';
 import { CatsService } from './cats.service';
 import { CreateCatDto } from './create-cat.dto';
 import { Cat } from './interfaces/cat.interface';

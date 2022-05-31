@@ -15,4 +15,8 @@ describe('PipesService', () => {
   it('should be defined', () => {
     expect(service).toBeDefined();
   });
+
+  it('findOne test', () => {
+    expect(service.findOne(2)).toBe(3);
+  });
 });

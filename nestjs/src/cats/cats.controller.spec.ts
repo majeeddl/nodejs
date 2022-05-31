@@ -1,5 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { CatsController } from './cats.controller';
+import { CatsService } from './cats.service';
 
 describe('CatsController', () => {
   let controller: CatsController;
@@ -7,6 +8,7 @@ describe('CatsController', () => {
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [CatsController],
+      providers: [CatsService],
     }).compile();
 
     controller = module.get<CatsController>(CatsController);
@@ -16,8 +18,8 @@ describe('CatsController', () => {
     expect(controller).toBeDefined();
   });
 
-  it('findAll', () => {
-    expect(controller.findAll()).toBe('This action returns all cats');
+  it('findAll', async () => {
+    expect(await controller.findAll()).toEqual([]);
   });
 
   it('findOne', async () => {
