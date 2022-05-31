@@ -1,4 +1,4 @@
-import { Controller, Get, Req, Param, Post, Body, Put, HttpException, HttpStatus, UseFilters } from '@nestjs/common';
+import { Controller, Get, Req, Param, Post, Body, Put, HttpException, HttpStatus, UseFilters, ValidationPipe } from '@nestjs/common';
 import { Request } from 'express';
 import { ForbiddenException } from '../exceptions/forbidden.exception';
 import { HttpExceptionFilter } from '../exceptions/http-exception.filter';
@@ -21,7 +21,9 @@ export class CatsController {
   }
 
   @Post()
-  async create(@Body() createCatDto: CreateCatDto): Promise<string> {
+  async create(
+    @Body(new ValidationPipe()) createCatDto: CreateCatDto,
+  ): Promise<string> {
     return 'create cat';
   }
 
