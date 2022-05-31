@@ -5,9 +5,9 @@ import { CatsController } from './cats/cats.controller';
 import { CatsService } from './cats/cats.service';
 import { CatsModule } from './cats/cats.module';
 import { LoggerMiddleware } from './middlewares/logger.middleware';
-
+import { PipesModule } from './pipes/pipes.module';
 @Module({
-  imports: [CatsModule],
+  imports: [CatsModule, PipesModule],
   controllers: [AppController],
   providers: [AppService],
 })
