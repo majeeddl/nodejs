@@ -21,6 +21,7 @@ const flyer = ({ name }) => {
     }
 }
 
+
 const swimmingMonsterCreator = (name)=>{
     const monster = { name : name};
 
