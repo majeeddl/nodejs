@@ -18,7 +18,7 @@ const mqtt = require('mqtt')
 // })
 
 const clientId = 'mqttjs_' + Math.random().toString(16).substr(2, 8)
-const host = 'wss://213.136.91.63:9001'
+const host = 'wss://profa.com.tr:9001'
 
 const password = ""
 
@@ -37,8 +37,8 @@ const options = {
         retain: false
     },
     rejectUnauthorized: false,
-    username : "",
-    password : password
+    username: "user",
+    password: password
 }
 
 console.log('connecting mqtt client')
@@ -51,8 +51,8 @@ client.on('error', function (err) {
 
 client.on('connect', function () {
     console.log('client connected:' + clientId)
-    client.subscribe('topic', { qos: 0 })
-    client.publish('topic', 'wss secure connection demo...!', { qos: 0, retain: false })
+    client.subscribe('#', { qos: 1 })
+    // client.publish('#', 'wss secure connection demo...!', { qos: 1, retain: false })
 })
 
 client.on('message', function (topic, message, packet) {
