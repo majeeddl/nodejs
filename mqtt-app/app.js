@@ -21,7 +21,7 @@ const clientId = 'mqttjs_' + Math.random().toString(16).substr(2, 8)
 const host = 'wss://profacloud.profa.com.tr:9001'
 
 const password =
-    "Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOlsiQWRtaW4iLCJPcGVyYXTDtnIiLCJTZXJ2aWNlIiwiT3BlcmF0w7ZyIEFkbWluIl0sIm5iZiI6MTY2MDI5MzQ5MywiZXhwIjoxNjYwODk4MjkzLCJpc3MiOiJ3d3cudGVrbmltLmNvbS50ciIsImF1ZCI6Ind3dy50ZWtuaW0uY29tLnRyIn0.7-j1HaazVPYvMdXRgx7atBVjXG8Njd7RihJrb5Au9DM";
+    "";
 
 
 const options = {
