@@ -1,0 +1,35 @@
+{
+	"folders": [
+		{
+			"path": "./javascript"
+		},
+		{
+			"path": "./typescript"
+		},
+		{
+			"path": "./graphql"
+		},
+		{
+			"path": "./nestjs"
+		},
+		{
+			"path": "./message-brokers"
+		},
+		{
+			"path": "./mongodb"
+		},
+		{
+			"path": "./elastichsearch"
+		},
+		{
+			"path": "./mqtt-app"
+		},
+		{
+			"path": "./design-patterns"
+		},
+		{
+			"path": "./restify"
+		}
+	],
+	"settings": {}
+}
