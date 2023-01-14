@@ -10,9 +10,6 @@
 			"path": "./graphql"
 		},
 		{
-			"path": "./nestjs"
-		},
-		{
 			"path": "./message-brokers"
 		},
 		{
