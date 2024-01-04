@@ -1,32 +1,51 @@
 {
-	"folders": [
-		{
-			"path": "./javascript"
-		},
-		{
-			"path": "./typescript"
-		},
-		{
-			"path": "./graphql"
-		},
-		{
-			"path": "./message-brokers"
-		},
-		{
-			"path": "./mongodb"
-		},
-		{
-			"path": "./elastichsearch"
-		},
-		{
-			"path": "./mqtt-app"
-		},
-		{
-			"path": "./design-patterns"
-		},
-		{
-			"path": "./restify"
-		}
-	],
-	"settings": {}
+  "folders": [
+    {
+      "path": "./javascript"
+    },
+    {
+      "path": "./typescript"
+    },
+    {
+      "path": "./graphql"
+    },
+    {
+      "path": "./message-brokers"
+    },
+    {
+      "path": "./mongodb"
+    },
+    {
+      "path": "./elastichsearch"
+    },
+    {
+      "path": "./mqtt-app"
+    },
+    {
+      "path": "./design-patterns"
+    },
+    {
+      "path": "./restify"
+    },
+    {
+      "path": "api-tdd"
+    },
+    {
+      "path": "orms"
+    }
+  ],
+  "settings": {
+    "jest.disabledWorkspaceFolders": [
+      "javascript",
+      "graphql",
+      "typescript",
+      "mongodb",
+      "elastichsearch",
+      "mqtt-app",
+      "message-brokers",
+      "design-patterns",
+      "restify",
+      "api-tdd"
+    ]
+  }
 }
