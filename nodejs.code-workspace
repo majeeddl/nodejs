@@ -32,6 +32,12 @@
     },
     {
       "path": "orms"
+    },
+    {
+      "path": "check-libraries"
+    },
+    {
+      "path": "websockets"
     }
   ],
   "settings": {
