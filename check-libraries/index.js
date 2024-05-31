@@ -1,45 +1,81 @@
 const ivm = require("isolated-vm");
 const axios = require("axios");
 
-async function checkLibraries() {
-  const isolate = new ivm.Isolate();
-  const context = await isolate.createContext();
+(async () => {
+  const isolate = new ivm.Isolate({ memoryLimit: 128 });
 
+  // Create a new context within this isolate. Each context has its own copy of all the builtin
+  // Objects. So for instance if one context does Object.prototype.foo = 1 this would not affect any
+  // other contexts.
+  const context = isolate.createContextSync();
+
+  // Get a Reference{} to the global object within the context.
   const jail = context.global;
 
-  //   jail.set("axios", ivm.ExternalCopy(axios).copySync());
+  // This makes the global object available in the context as `global`. We use `derefInto()` here
+  // because otherwise `global` would actually be a Reference{} object in the new isolate.
+  jail.setSync("global", jail.derefInto());
 
-  await jail.set("axios", new ivm.Reference(axios));
-
-  jail.set("log", function (...args) {
+  // We will create a basic `log` function for the new isolate to use.
+  jail.setSync("log", function (...args) {
     console.log(...args);
   });
 
-  //   context.eval("log('Hello from the jail!')");
+  jail.setSync("axios1", async function (url) {
+    return await axios.get(url);
+  });
 
-  const script = await isolate.compileScript(`
-   
+  // And let's test it out:
+  context.evalSync('log("hello world")');
+  // > hello world
 
-     async function fetchData() {
-        const response = await axios.get("https://google.com");
+  // Let's see what happens when we try to blow the isolate's memory
+  const hostile = isolate.compileScriptSync(`
 
-        console.log(response.data);
+  const run = async () => {
 
-        // log('Hello from the jail!');
-        }
+    const storage = [1,3,4,5.6];
 
-        fetchData();
-     
-    `);
+  let max = 0
 
-  //   const script = await isolate.compileScript(`
-  //     const axios = global.axios;
-  //     axios.get("https://google.com").then((res) => {
-  //       console.log(res.data);
-  //     });
-  //     `);
+  const $sdk = {
+    database: {
+      users: {
+        findOne: async (query) => {
+          return new Promise((resolve, reject) => {
+            resolve({
+              name: "admin",
+              email: "admin@localhost",
+            });
+          });
+        },
+      },
+    },
+  };
 
-  await script.run(context);
-}
+  const test = async () => {
+    const result = await $sdk.database.users.findOne({ 
+      query : {
+        "name": "admin" 
+      }
 
-checkLibraries();
+      
+    });
+
+    const m = $sdk.me.name; const n = $sdk.me.email;
+
+    log(result);
+
+  };
+
+  await test();
+  }
+
+	run().catch((err) => log(err));
+  6
+
+`);
+
+  // Using the async version of `run` so that calls to `log` will get to the main node isolate
+  hostile.run(context).catch((err) => console.error(err));
+})();
