@@ -5,7 +5,7 @@
   "author": "Majeed Dourandeesh",
   "license": "ISC",
   "scripts": {
-    "start" : "nodemon app.js"
+    "start": "nodemon app.js"
   },
   "dependencies": {
     "boom": "^7.3.0",
@@ -13,7 +13,7 @@
     "express-graphql": "^0.12.0",
     "graphql": "^16.6.0",
     "mongo": "^0.1.0",
-    "mongoose": "^6.6.1",
-    "nodemon": "^2.0.20"
+    "mongoose": "^8.12.1",
+    "nodemon": "^3.1.9"
   }
 }

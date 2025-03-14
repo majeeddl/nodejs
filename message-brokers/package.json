@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev ./src/app.ts",
-    "dev:kafka" : "ts-node-dev ./src/kafka/index.ts",
+    "dev:kafka": "ts-node-dev ./src/kafka/index.ts",
     "start:producer": "ts-node-dev ./kafka/producer/index.ts",
     "start:consumer": "ts-node-dev ./kafka/consumer/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,14 +13,14 @@
   "author": "Majeed Dourandeesh",
   "license": "ISC",
   "dependencies": {
-    "amqplib": "^0.9.0",
+    "amqplib": "^0.10.5",
     "avsc": "^5.7.4",
     "kafkajs": "^2.0.0"
   },
   "devDependencies": {
-    "@types/amqplib": "^0.8.2",
+    "@types/amqplib": "^0.10.7",
     "@types/kafkajs": "^1.9.0",
-    "ts-node-dev": "^1.1.8",
-    "typescript": "^4.6.4"
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.2"
   }
 }
