@@ -2,10 +2,17 @@ import { Kafka } from "kafkajs";
 
 const kafka = new Kafka({
   clientId: "my-app",
-  brokers: ["localhost:9092"],
+  brokers: ["localhost:19092", "localhost:19093", "localhost:19094"],
+  // brokers: ["localhost:19092"],
+  // sasl: {
+  //   mechanism: "plain", // can be 'plain', 'scram-sha-256', or 'scram-sha-512'
+  //   username: "admin", // replace with actual username
+  //   password: "admin-secret", // replace with actual password
+  // },
+  // ssl: false, // set to true if using SSL/TLS
 });
 
-const producer = kafka.producer();
+const producer = kafka.producer({ allowAutoTopicCreation: true });
 const consumer = kafka.consumer({ groupId: "test-group" });
 
 const run = async () => {
